@@ -2,5 +2,30 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./apps/api-gateway-e2e"
+    },
+    {
+      "path": "./apps/api-gateway"
+    },
+    {
+      "path": "./apps/products-e2e"
+    },
+    {
+      "path": "./apps/products"
+    },
+    {
+      "path": "./libs/logger"
+    },
+    {
+      "path": "./libs/auth"
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@OPGT/logger": ["libs/logger/src/index.ts"]
+    }
+  }
 }

@@ -1,22 +1,12 @@
 {
   "name": "@nxjs/logger",
   "version": "0.0.1",
-  "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "development": "./src/index.ts",
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
+  "main": "dist/index.ts",
+  "types": "dist/index.ts",
   "files": [
-    "dist",
-    "!**/*.tsbuildinfo"
+    "dist"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "winston": "^3.17.0"
+  }
 }
