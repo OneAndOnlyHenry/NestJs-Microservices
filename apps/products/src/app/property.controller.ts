@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  Logger,
   Param,
   Post,
   Put,
@@ -15,6 +16,7 @@ import { CreatePropertyDto } from './dto/createProperty.dto';
 export class PropertyController {
   @Get()
   getAllProperties() {
+    Logger.log('logger here.');
     return 'This action returns all properties, OK?';
   }
   @Get(':id')
@@ -25,6 +27,19 @@ export class PropertyController {
   @Post()
   @UsePipes(new ValidationPipe({ transform: true }))
   createProperty(@Body() body: CreatePropertyDto) {
+    const abc = body.name;
+    const req = {
+      body: {
+        name: 'Daniel Duuch',
+        email: 'daniel.duuch@greatmail.com',
+        password: 'myGreatPassword',
+      },
+    };
+    console.log('logger here.', body.name);
+    Logger.log(`body: ${body.name}`);
+    Logger.debug(`body: ${body.name}`);
+    Logger.warn(`body: ${req.body.name}`);
+    Logger.error(`body: ${req.body.name}`);
     return body;
   }
 
